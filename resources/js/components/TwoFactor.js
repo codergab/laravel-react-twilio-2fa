@@ -4,33 +4,31 @@ import { FormValidation } from "calidation";
 class TwoFactor extends React.Component {
     constructor() {
         super();
-
         this.onSubmit = this.onSubmit.bind(this);
     }
 
     onSubmit({ fields, errors, isValid }){
         if (isValid) {
-          // This is where we'd handle our submission...
-          // `fields` is an object, { field: value }
-          const { email, password } = fields;
-        //   alert(email);
+            // This is where we'd handle our submission...
+            // `fields` is an object, { field: value }
+            const { email, password } = fields;
         } else {
-          // `errors` is also an object!
-          
+            // `errors` is also an object!
         }
     };
 
     componentWillMount() {
-        console.log(store.getState());
+        // Send a GET Http Request to check if a user is logged in
+        
     }
 
     render() {
         const config = {
             auth_code: {
-              isRequired: "Auth Code is Required",
-              isEmail: "Please Enter 6 digits code sent to you"
+                isRequired: "Auth Code is Required",
+                isEmail: "Please Enter 6 digits code sent to you"
             }
-          };
+        };
         return (
             <div className="row justify-content-center m-5">
                 <div className="col-md-4">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { FormValidation } from "calidation";
+import checkAuth from './Auth';
 class Login extends React.Component {
     constructor() {
         super();
@@ -29,6 +30,14 @@ class Login extends React.Component {
           
         }
     };
+
+    componentWillMount() {
+        if(checkAuth()) {
+            <Redirect to="/" />
+        }else {
+            alert('Not true');
+        }
+    }
 
     render() {
         const config = {
