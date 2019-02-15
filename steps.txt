@@ -1,0 +1,20 @@
+--- Setting up front page
+--- Add csrf-token meta to head section
+--- Create Files inside Resources > Js > components ( Login.js, Register.js, Profile.js, Router.js
+--- Rename Example.js to Main.js
+--- install react-router-dom ( yarn add react-router-dom ), react-calidation library for form validation (yarn add calidation)
+--- create and migrate database
+--- Create backendcontroller.php for consuming our apis
+--- Add Exception of routes for login and register to verify csrf_token
+--- Login to your Twilio console. https://www.twilio.com/console/sms/dashboard and setup a twilio sms account and phone number
+
+if you don't have a phone number, you can check how to get one here
+
+https://support.twilio.com/hc/en-us/articles/223183068-Twilio-international-phone-number-availability-and-their-capabilities?_ga=2.28732348.1264841564.1550186817-1765135687.1549578397
+
++12564459688
+send a test message after obtaining your number and click on make request
+
+---- Install Twilio SDK - https://packagist.org/packages/aloha/twilio
+using composer - composer require aloha/twilio
+
