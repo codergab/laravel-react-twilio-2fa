@@ -16,6 +16,16 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/check-login-status', function () {
+    if (auth()->check()) {
+        return response()->json('ok');
+    }
+
+    return response()->json('Not Logged in');
+});
+
+Route::post('/user/login','BackendController@userLogin');
 Route::get('/{path?}', function () {
     return view('index');
 })->where('path', '.*');
+
