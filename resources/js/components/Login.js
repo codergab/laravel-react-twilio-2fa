@@ -44,6 +44,10 @@ class Login extends React.Component {
                 } else {
                    location.href='/authentication/validate/two-factor';
                 }
+            }).fail(() => {
+                buttonn.classList.remove('disabled');
+                buttonn.innerHTML = "LogIn";
+                this.setState({ errors: { error: true, text: 'Something Went Wrong, Please Try Again'}});
             });
 
 
@@ -71,10 +75,11 @@ class Login extends React.Component {
         $.get('/check-login-status', function (data) {
             console.log(data);
             statee = data;
-            
         });
 
         this.setState({ response: statee });
+
+        localStorage.setItem('login_status','ok');
     }
 
     render() {
@@ -104,8 +109,8 @@ class Login extends React.Component {
             <div className="row justify-content-center m-5">
                 <div className="col-md-4">
                     {
-                        this.state.error && 
-                        <div className='alert alert-danger'>{this.state.error}</div>
+                        this.state.errors.text.length > 0 && 
+                        <div className='alert alert-danger'>{this.state.errors.text}</div>
                     }
                     <div className="card">
                         <div className="card-header">Login to your account</div>

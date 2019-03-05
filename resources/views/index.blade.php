@@ -27,13 +27,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/sign-in">Login</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="/create-account">Register</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             @endguest
             @auth
+            @if(!Request::is('/authentication/validate/two-factor') || !url()->current() == "/authentication/validate/two-factor")
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -48,6 +49,7 @@
                     
                 </ul>
             </div>
+            @endif
             @endauth
         </nav>
         <div id="app-root"></div>

@@ -2,9 +2,6 @@ import React, {
     Component
 } from 'react';
 import ReactDOM from 'react-dom';
-import {
-    Redirect
-} from 'react-router-dom';
 import AppRouter from './Router';
 export default class Main extends Component {
 
@@ -18,5 +15,5 @@ export default class Main extends Component {
 }
 
 if (document.getElementById('app-root')) {
-    ReactDOM.render( < Main / > , document.getElementById('app-root'));
+    ReactDOM.render( <Main /> , document.getElementById('app-root'));
 }

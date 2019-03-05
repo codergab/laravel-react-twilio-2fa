@@ -25,7 +25,8 @@ Route::get('/check-login-status', function () {
 });
 
 Route::post('/user/login','BackendController@userLogin');
+Route::post('sms/send','BackendController@sendMessage');
+Route::post('sms/verify','BackendController@verifyAuthcode');
 Route::get('/{path?}', function () {
     return view('index');
 })->where('path', '.*');
-
